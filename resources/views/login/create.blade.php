@@ -19,13 +19,13 @@
 
                 <div class="d-flex flex-column mt-3">
                     <label for="email" class="form-label">Email</label>
-                    <input required type="email" id="email" name="email" class="form-control">
+                    <input required type="email" id="email" name="email" class="form-control" placeholder="exemplo@gmail.com">
                     <span class="error p-1"></span>
                 </div>
 
                 <div class="d-flex flex-column mt-3">
                     <label for="password" class="form-label">Senha</label>
-                    <input required type="password" id="password" name="password" class="form-control">
+                    <input required type="password" id="password" name="password" class="form-control" placeholder="******">
                     <span class="error p-1"></span>
                 </div>
 
@@ -42,14 +42,39 @@
                     </button>
                 </div>
 
-
                 <div class="w-100 d-flex justify-content-between mt-3">
                     <a class="text-formoney" title="Se registrar" href="/register">Registrar</a>
-                    <a class="text-formoney" title="Esqueci minha senha" href="/forgot-pass">Esqueci minha senha</a>
+                    <a data-bs-toggle="modal" data-bs-target="#resetPass" class="text-formoney" title="Esqueci minha senha" href="#">Esqueci minha senha</a>
                 </div>
             </form>
         </section>
     </main>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="resetPass" tabindex="-1" aria-labelledby="resetPassLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form method="POST" accept="/reset-pass" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resetPassLabel">Esqueci minha senha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="email_reset" class="form-label">Digite seu email cadastrado</label>
+                        <input required type="email" id="email_reset" name="email_reset" class="form-control" placeholder="exemplo@gamil.com">
+                        <span class="error p-1"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Verificar</button>
+
+                    <div class="alert alert-info">
+                        Confira seu email, enviaremos um link para você poder redefinir sua senha.
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script type="text/javascript">
         getFields();

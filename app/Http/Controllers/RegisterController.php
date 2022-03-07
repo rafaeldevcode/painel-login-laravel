@@ -16,6 +16,10 @@ class RegisterController extends Controller
 
     public function store(Request $request, Create $create)
     {
+        if($request->password_verify !== $request->password){
+            return back()->withErrors('As senhas não conferem!');
+        }
+        
         $create->createUser($request);
         
         return redirect('/dashboard');

@@ -15,21 +15,29 @@
                     <h1 class="text-center fs-2">Se registrar</h1>
                 </div>
 
+                @include('layouts/components/errors', [$errors])
+
                 <div class="d-flex flex-column mt-3">
                     <label for="name" class="form-label">Nome</label>
-                    <input required type="text" id="name" name="name" class="form-control">
+                    <input required type="text" id="name" name="name" class="form-control" placeholder="Digite seu nome">
                     <span class="error p-1 rounded-bottom"></span>
                 </div>
 
                 <div class="d-flex flex-column mt-3">
                     <label for="email" class="form-label">Email</label>
-                    <input required type="email" id="email" name="email" class="form-control">
+                    <input required type="email" id="email" name="email" class="form-control" placeholder="exemplo@gmail.com">
                     <span class="error p-1 rounded-bottom"></span>
                 </div>
 
                 <div class="d-flex flex-column mt-3">
                     <label for="password" class="form-label">Senha</label>
-                    <input required type="password" id="password" name="password" class="form-control">
+                    <input required type="password" id="password" name="password" class="form-control" placeholder="******">
+                    <span class="error p-1 rounded-bottom"></span>
+                </div>
+
+                <div class="d-flex flex-column mt-3">
+                    <label for="password_verify" class="form-label">Repetir senha novamente</label>
+                    <input required type="password" id="password_verify" name="password_verify" class="form-control" placeholder="******">
                     <span class="error p-1 rounded-bottom"></span>
                 </div>
 

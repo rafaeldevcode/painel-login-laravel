@@ -3,9 +3,12 @@
 //     document.querySelector('footer').classList.add('footer-relative');
 // }
 
-let date = new Date;
-let year = date.getFullYear();
-document.getElementById('year').innerHTML = year;
+function getYear(){
+    let date = new Date;
+    let year = date.getFullYear();
+
+    return year;
+}
 
 function oppenMenu(){
     let menuCheck = document.getElementById('checkbox-menu');
