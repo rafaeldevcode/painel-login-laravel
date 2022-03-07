@@ -18,7 +18,7 @@ body{
 
 /* //// HEADER //// */
 .logo{
-    width: 200px;
+    width: 150px;
 }
 
 .logo img{
@@ -118,7 +118,7 @@ body{
 .nav ul li summary::before{
     content: '';
     position: absolute;
-    right: 0px;
+    right: -50px;
     bottom: 50%;
 
     display: inline-block;

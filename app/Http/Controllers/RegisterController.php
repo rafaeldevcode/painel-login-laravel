@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Create;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function index()
+    public function create()
     {
-        $title = 'Foemoney - Planilhas | Register';
+        $title = 'Formoney - Planilhas | Register';
 
-        return view('register/index', compact('title'));
+        return view('register/create', compact('title'));
+    }
+
+    public function store(Request $request, Create $create)
+    {
+        $create->createUser($request);
+        
+        return redirect('/dashboard');
     }
 }

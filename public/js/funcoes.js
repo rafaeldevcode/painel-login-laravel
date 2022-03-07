@@ -1,7 +1,7 @@
 /////// ADICIONAR FOOTER NO FINAL DA PAGINA ////////////
-if (document.querySelector('body').offsetHeight > window.innerHeight){
-    document.querySelector('footer').classList.add('footer-relative');
-}
+// if (document.querySelector('body').offsetHeight > window.innerHeight){
+//     document.querySelector('footer').classList.add('footer-relative');
+// }
 
 let date = new Date;
 let year = date.getFullYear();

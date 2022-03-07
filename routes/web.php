@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,20 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/dashboard', function(){
+    $title = 'Formoney - Planilhas | Dashboard';
+    $user = Auth::user();
+
+    return view('dashboard', compact('title', 'user'));
+})->middleware('auth');
+
 Route::controller(RegisterController::class)
 ->prefix('register')
 ->group(function(){
 
-    Route::get('/', 'index');
-    Route::post('/', 'create');
+    Route::get('/', 'create');
+    Route::post('/', 'store');
 
 });
 
 Route::controller(LoginController::class)
-->prefix('login')
 ->group(function(){
 
-    Route::get('/', 'index');
-    Route::post('/', 'create');
+    Route::get('/login', 'create')->name('login');
+    Route::post('/login', 'store');
+    Route::post('/logout', 'logout');
 
 });
