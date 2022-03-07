@@ -16,6 +16,7 @@
                 </div>
 
                 @include('layouts/components/errors', [$errors])
+                @include('layouts/components/message', [$message])
 
                 <div class="d-flex flex-column mt-3">
                     <label for="email" class="form-label">Email</label>
@@ -53,7 +54,9 @@
     <!-- Modal -->
     <div class="modal fade" id="resetPass" tabindex="-1" aria-labelledby="resetPassLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <form method="POST" accept="/reset-pass" class="modal-content">
+            <form method="POST" action="/reset-pass" class="modal-content">
+                @csrf
+
                 <div class="modal-header">
                     <h5 class="modal-title" id="resetPassLabel">Esqueci minha senha</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

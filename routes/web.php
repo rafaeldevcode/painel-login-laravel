@@ -38,5 +38,6 @@ Route::controller(LoginController::class)
     Route::get('/login', 'create')->name('login');
     Route::post('/login', 'store');
     Route::post('/logout', 'logout');
+    Route::post('/reset-pass', 'resetPass');
 
 });
