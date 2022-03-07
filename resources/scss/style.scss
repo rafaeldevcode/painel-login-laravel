@@ -1,0 +1,29 @@
+$primary : #0D6EFD;
+$secondary : #6C757D;
+$success : #198754;
+$info : #0DCAF0;
+$warning : #FFC107;
+$danger : #DC3545;
+$light : #F8F9FA;
+$dark : #212529;
+
+$formoney : #23A556;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+);
+
+$custom-colors: (
+    "formoney": $formoney
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors );
+
+@import "node_modules/bootstrap/scss/bootstrap";
